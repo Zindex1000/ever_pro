@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        body{
+            background-image: url(../images/home_three.png);
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navmune">
+            <ul class="ul1">
+                <li><a href="../view/index.html">首页</a></li>
+                <li><div id="allp"><a href="../view/allpro.html" >所有产品</a></div></li>
+                <li><a href="">WIS资讯</a></li>
+                <li><a href="../view/aboutwis.html">关于WIS</a></li>
+                <li><a href="../view/checkcode.html" class="ul-active">防伪查询</a></li>
+                <li><a href="../view/member.html">会员中心</a></li>
+                <li><a href="../view/ppzsy.html">品牌招商</a></li>
+            </ul>
+        </nav>
+        <div class="allcp">
+            <div class="allcp-son">
+                <div class="allcp-son1">
+                    <p>人气面膜</p>
+                        <table cellspacing="20" class="alltable">
+                            <tr>
+                                <td>细致毛孔</td>
+                                <td>补水保湿</td>
+                                <td>深层清洁</td>
+                                <td>滋养修护</td>
+                            </tr>
+                            <tr>
+                                <td>白亮嫩肤</td>
+                                <td>舒缓抑敏</td>
+                                <td>补水控油</td>
+                            </tr>
+                        </table>
+                </div>
+                <div>
+    
+                    <p>功效分类</p>
+                        <table cellspacing="20" class="alltable">
+                            <tr>
+                                <td>去除黑头</td>
+                                <td>提亮肤色</td>
+                                <td>清洁毛孔</td>
+                                <td>祛痘淡印</td>
+                            </tr>
+                            <tr>
+                                <td>舒缓抑敏</td>
+                                <td>补水保湿</td>
+                                <td>隔离遮瑕</td>
+                                <td>清爽控油</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table cellspacing="20">
+                            <tr>
+                                <td>彩妆专属</td>
+                                <td>护理专属</td>
+                                <td>新品专区</td>
+                            </tr>
+                            <tr>
+                                <td>水乳套装</td>
+                                <td>爆款榜单</td>
+                                <td>男生专属</td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="check-1">
+        <div class="check-son">
+            <div class="check-son-1">
+                <img src="../images/anticode/anti-verification.png" width="38px" height="38px" alt="">
+                <span class="c-s-1-t">防伪验证码</span>
+            </div>
+            <div class="check-son-2">
+                <p>由于防伪码更新，本店产品上的防伪标会有新旧之分</p>
+                <p>请各位希粉仔细阅读以下内容</p>
+            </div>
+            <div class="check-son-3">
+                <div class="c-3-img">
+                    <img src="../images/anticode/new-single.png" alt="">
+                </div>
+                <div class="c-3-img1">
+                    <img src="../images/anticode/old-single.png" alt="">
+                </div>
+            </div>
+            <div class="check-son-4">
+                <span>注：</span>
+                <span>新防伪码（7位）请务必使用微信扫描产品上的二维码，扫码后输入</span>
+                <span>当前所扫码的产品防伪码进行查询，不可输入非所扫描产品上的二维码进</span>
+                <span>行查询。</span>
+            </div>
+            <div class="check-son-5">
+                查询步骤及方式
+            </div>
+            <div class="check-son-6">
+                <img src="../images/anticode/qr-code.png" width="88px" alt="">
+            </div>
+            <div class="check-son-7">
+                官方微信公众号：WISVIP
+            </div>
+            <div class="check-son-8">
+                <p>
+                    1. 打开微信扫一扫，扫描上方二维码关注官方微信公众号；
+                    </p>
+                    <p>
+                        2. 点击“防伪查询”或微信扫一扫，扫描产品二维码，进入查询页面；
+                        </p>
+                        <p>
+                            3. 输入购买的渠道和店铺，刮开涂层，输入正确的防伪码即可查询真伪；
+                            </p>
+                            <p>
+                                4. 若仍无法查询，请拨打免费客服热线咨询 020-3220-5671。
+                                </p>
+            </div>
+            <div class="check-son-9">
+                <a style="color: #fff;text-decoration: none;" href="#">粤ICP备12025057号-3</a>
+                <span style="margin-left: 20px;font-size: 14px;">版权所有©广州凡岛网络科技有限公司</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#allp,.allcp").mouseover(function(){
+            $('.allcp').css({
+                'display':'block'
+            })
+        })
+        $("#allp,.allcp").mouseout(function(){
+            $('.allcp').css({
+                'display':'none'
+            })
+        })
+    })
+</script>
+</html>

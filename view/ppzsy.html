@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        body{
+            background-image: url(../images/aboutImg/bg9.png);
+        }
+        .ppzsy-s{
+            padding-top: 130px;
+            color:white;
+        }
+        .ppzs-hr{
+            width: 1px;
+            height: 60px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navmune">
+            <ul class="ul1">
+                <li><a href="../view/index.html">首页</a></li>
+                <li><div id="allp"><a href="../view/allpro.html" >所有产品</a></div></li>
+                <li><a href="">WIS资讯</a></li>
+                <li><a href="../view/aboutwis.html">关于WIS</a></li>
+                <li><a href="../view/checkcode.html" >防伪查询</a></li>
+                <li><a href="../view/member.html" >会员中心</a></li>
+                <li><a href="../view/ppzsy.html" class="ul-active">品牌招商</a></li>
+            </ul>
+        </nav>
+        <div class="allcp">
+            <div class="allcp-son">
+                <div class="allcp-son1">
+                    <p>人气面膜</p>
+                        <table cellspacing="20" class="alltable">
+                            <tr>
+                                <td>细致毛孔</td>
+                                <td>补水保湿</td>
+                                <td>深层清洁</td>
+                                <td>滋养修护</td>
+                            </tr>
+                            <tr>
+                                <td>白亮嫩肤</td>
+                                <td>舒缓抑敏</td>
+                                <td>补水控油</td>
+                            </tr>
+                        </table>
+                </div>
+                <div>
+    
+                    <p>功效分类</p>
+                        <table cellspacing="20" class="alltable">
+                            <tr>
+                                <td>去除黑头</td>
+                                <td>提亮肤色</td>
+                                <td>清洁毛孔</td>
+                                <td>祛痘淡印</td>
+                            </tr>
+                            <tr>
+                                <td>舒缓抑敏</td>
+                                <td>补水保湿</td>
+                                <td>隔离遮瑕</td>
+                                <td>清爽控油</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table cellspacing="20">
+                            <tr>
+                                <td>彩妆专属</td>
+                                <td>护理专属</td>
+                                <td>新品专区</td>
+                            </tr>
+                            <tr>
+                                <td>水乳套装</td>
+                                <td>爆款榜单</td>
+                                <td>男生专属</td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="ppzsy-s">
+        <div class="ppzs">
+            <div class="ppzs-img">
+                <img src="../images/pro/investment.png" alt="">
+            </div>
+            <div class="ppzs1">
+                    <h3 class="ppzs1-t">WIS与你携手同行</h3>
+                    <div class="ppzs1-text">
+                        随着时间的推移，截至至今WIS已经开拓了26个网络网络购物渠道，沉淀多个渠道的粉丝力量。长期的电商积淀不仅实现了专业运营推广的搭建，也提升了WIS对消费者和市场的把控能力。如今，我们的品牌也再努力实现线上线下全渠道覆盖，对于万宁、天福、家乐福等渠道已经进驻，现如今我们已经开拓到上千家实体门店，并且也在热烈招商进行中，有意请联系我们。                            </div>
+                <div class="ppzs1-s">
+                    <div class="zs2-1"><img src="../images/pro/code.png" alt=""></div>
+                    <div class="ppzs-hr"></div>
+                    <div class="zs1">
+                        <div>
+                            招商热线：
+                        </div>
+                        <div>
+                            400-9605-230
+                        </div>
+                        <div>020-31700160</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mem-foot">
+        <a style="color: #fff;text-decoration: none;" href="#">粤ICP备12025057号-3</a>
+        <span style="margin-left: 20px;font-size: 14px;color: white;">版权所有©广州凡岛网络科技有限公司</span>
+    </div>
+</body>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#allp,.allcp").mouseover(function(){
+            $('.allcp').css({
+                'display':'block'
+            })
+        })
+        $("#allp,.allcp").mouseout(function(){
+            $('.allcp').css({
+                'display':'none'
+            })
+        })
+    })
+</script>
+</html>

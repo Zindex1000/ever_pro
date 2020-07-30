@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .slide5{
+            background-image: url(../images/home_three.png);
+        }
+        .slide-son5{
+            text-align: center;
+            font-size: 18px;
+            width: 640px;
+            height: 60%;
+            margin-top: 229px;
+        }
+        .slide-son5 .sl-5-1{
+            height: 320px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .sl-5-2{
+            margin-top: 20px;
+            height: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .sl-5-2-t1{
+            width: 100%;
+            font-size: 20px;
+            font-family: PingFang SC;
+            font-weight: 400;
+            line-height: 28px;
+            color: rgba(255, 255, 255, 1);
+            opacity: 1;
+            text-align: start;
+        }
+        .sl-5-2-t2{
+            width: 40px;
+            height: 2px;
+            background-color: white;
+        }
+        .sl-5-2-t3{
+            width: 640px;
+            font-size: 16px;
+            font-family: PingFang SC;
+            font-weight: 300;
+            line-height: 32px;
+            color: rgba(255, 255, 255, 1);
+            opacity: 1;
+            text-align: left;
+            overflow: hidden;
+        }
+        .sl-5-2-t4{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-family: PingFang SC;
+            font-weight: 400;
+            line-height: 32px;
+            color: rgba(255, 255, 255, 1);
+            opacity: 1;
+        }
+        .swiper-container-son5 .swiper-pagination-m{
+            /* background-color: red; */
+            position: absolute;
+            bottom: 10%;
+            font-size: 32px;
+            color: white;
+        }
+        .fled-class{
+            z-index: 1000;
+            position: fixed;
+            bottom: 70px;
+            right: 72px;
+            cursor: pointer;
+        }
+        .fled-class-out{
+            z-index: 1011;
+            position: fixed;
+            bottom: 70px;
+            right: 72px;
+            cursor: pointer;
+        }
+        .fled-class-1{
+            display: none;
+            z-index: 1000;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            /* background-color: red; */
+            background: #0a7fca;
+            opacity: 0.8;
+            color: white;
+        }
+        .f-c-son{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: 30px;
+        }
+        .f-c-1-son{
+            width: 60%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .table-foot1{
+            height: 82%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 14px;
+        }
+        .foot-tab-td tr td{
+            padding-right: 30px;
+        }
+        .maodian1{
+            z-index: 1000;
+            position: absolute;
+            bottom: 155px;
+            right: 72px;
+            cursor: pointer;
+        }
+        .swiper-pagination-bullet {
+            
+            width: 8px;
+            height: 8px;
+            line-height: 20px;
+            opacity: 0.5;
+            background-color: white;
+        }
+        .swiper-pagination-bullet-active {
+            width: 8px;
+            height: 16px;
+            border-radius: 16px;
+            background: white;
+            opacity: 1;
+        }
+        .swiper-container-father .swiper-pagination {
+            width: 40%;
+            left: 31px;
+        }
+        .slide1 .swiper-button-next{
+            position: absolute;
+            top: 75%;
+            right: 25%;
+            width: 60px;
+            height: 60px;
+            margin-top: -22px;
+            z-index: 10;
+            cursor: pointer;
+            background-size: 27px 44px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../images/index/ri.png);
+            background-size: 60px 60px;
+        }
+        .slide1 .swiper-button-prev{
+            position: absolute;
+            top: 75%;
+            left: 25%;
+            width: 60px;
+            height: 60px;
+            margin-top: -22px;
+            z-index: 10;
+            cursor: pointer;
+            background-size: 27px 44px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../images/index/le.png);
+            background-size: 60px 60px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container swiper-container-father">
+        <nav class="navmune">
+            <img src="../images/pro/logo.svg" alt="">
+            <ul class="ul1">
+                <li><a href="../view/index.html" class="ul-active">首页</a></li>
+                <li><div id="allp"><a href="../view/allpro.html" >所有产品</a></div></li>
+                <li><a href="">WIS资讯</a></li>
+                <li><a href="../view/aboutwis.html">关于WIS</a></li>
+                <li><a href="../view/checkcode.html">防伪查询</a></li>
+                <li><a href="../view/member.html">会员中心</a></li>
+                <li><a href="../view/ppzsy.html">品牌招商</a></li>
+            </ul>
+        </nav>
+        <div class="allcp">
+            <div class="allcp-son">
+                <div class="allcp-son1">
+                    <p>人气面膜</p>
+                        <table cellspacing="20" class="alltable">
+                            <tr>
+                                <td>细致毛孔</td>
+                                <td>补水保湿</td>
+                                <td>深层清洁</td>
+                                <td>滋养修护</td>
+                            </tr>
+                            <tr>
+                                <td>白亮嫩肤</td>
+                                <td>舒缓抑敏</td>
+                                <td>补水控油</td>
+                            </tr>
+                        </table>
+                </div>
+                <div>
+    
+                    <p>功效分类</p>
+                        <table cellspacing="20" class="alltable">
+                            <tr>
+                                <td>去除黑头</td>
+                                <td>提亮肤色</td>
+                                <td>清洁毛孔</td>
+                                <td>祛痘淡印</td>
+                            </tr>
+                            <tr>
+                                <td>舒缓抑敏</td>
+                                <td>补水保湿</td>
+                                <td>隔离遮瑕</td>
+                                <td>清爽控油</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table cellspacing="20">
+                            <tr>
+                                <td>彩妆专属</td>
+                                <td>护理专属</td>
+                                <td>新品专区</td>
+                            </tr>
+                            <tr>
+                                <td>水乳套装</td>
+                                <td>爆款榜单</td>
+                                <td>男生专属</td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <div class="swiper-container swiper-container-son">
+                    <div id="daohang">
+                    </div>
+                    <div class="swiper-wrapper ">
+                        <div class="swiper-slide "><img style="z-index: -3;" src="../images/index/auto_four.jpg" alt="bizhi"></div>
+                        <div class="swiper-slide"><img src="../images/index/auto_one.jpg" alt="bizhi"></div>
+                        <div class="swiper-slide"><img src="../images/index/auto_two.jpg" alt="bizhi"> </div>
+                    </div>
+                </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+           </div>
+            <div class="swiper-slide slide2">
+                    <div class="slide2_content">
+                        <div class="biaoti1">·&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;品牌故事&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;·</div>
+                        <span style="color: white;font-size: 20px;margin-top: 20px;">BRAND STORY</span>
+                        <div class="text1">“WIS”源自欧洲一个古老的单词“WISSENSCHAFT”意指科学技术</div>
+                        <div class="text2">
+                            <p>作为护肤品牌，WIS一直按照严格的标准做化妆品，</p>
+                            <p>携手瑞士世界级原料科研供应商（RANH集团），运用天然成分和先进科技，追求极致的科学性和安全性，</p>
+                            <p>致力于为全球年轻的消费者带来美好的肌肤体验。</p>
+                        </div>
+                        <div>
+                            <table class="icontable">
+                                <tr>
+                                    <td class="icon1"><embed src="../images/index/brand_one.svg"><span>产品安全</span></td>
+                                    <td class="icon1"><embed src="../images/index/brand_two.svg">科学研发</td>
+                                    <td class="icon1"><embed src="../images/index/brand_three.svg">国际合作</td>
+                                    <td class="icon1"><embed src="../images/index/brand_four.svg">取材优质</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="button1">
+                            <a href="#">了解更多&nbsp;&gt;</a>
+                        </div>
+                    </div>
+                    <img src="../images/index/home_two.png" alt="" >
+                    <div class="maodian1">
+                        <img src="../images/pro/allproduct_one_17.png"  alt="">
+                    </div>
+            </div>
+            <div class="swiper-slide slide3">
+                    <div class="slide3_content">
+                        <div class="biaoti1">·&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;我们的产品&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;·</div>
+                        <span style="color: white;font-size: 20px;margin-top: 20px;">OUR PRODUCTS</span>
+                    </div>
+                    <div class="swiper-container swiper-container-son2">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide slide-son2">
+                          <img src="../images/pro/p1.png" class="img-responsive" alt="Image">
+                          <div class="protext"><div class="text4">
+                                <div class="title1">璀璨新品</div>
+                                <div class="title2">Bright new products</div>
+                                <div class="msg1">肌肤状态日新月异，璀璨新品闪耀来袭。WIS秉承着对美的不懈追求与探索，以独具匠心的护肤理念不断从大自然中获取灵感，在万物之中寻找生命的奥秘，并将其转化为强大的护肤能量，配比出科学且有效的配方，同时致力于打造愉悦的护肤感受，温和宠爱你的每一寸肌肤！</div>
+                                <div class="button2">
+                                    <a href="#">了解更多&nbsp;&gt;</a>
+                                </div>
+                            </div></div>
+                          </div>
+                          <div class="swiper-slide slide-son2">Slide 2</div>
+                          <div class="swiper-slide slide-son2">Slide 3</div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-l"></div>
+                        <div class="swiper-button-prev swiper-button-prev1"></div>
+                        <div class="swiper-button-next swiper-button-next1"></div>
+                    </div>
+                    <div class="maodian1">
+                        <img src="../images/pro/allproduct_one_17.png"  alt="">
+                    </div>
+            </div>
+            <div class="swiper-slide slide4">
+                <div class="slide4_content">
+                    <div class="biaoti2">·&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;品牌招商&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;·</div>
+                    <div class="xbiaoti2">BRAND INVESTMENT</div>
+                    <div class="ppzs">
+                        <div class="ppzs-img">
+                            <img src="../images/pro/investment.png" alt="">
+                        </div>
+                        <div class="ppzs1">
+                                <h3 class="ppzs1-t">WIS与你携手同行</h3>
+                                <div class="ppzs1-text">
+                                    随着时间的推移，截至至今WIS已经开拓了26个网络网络购物渠道，沉淀多个渠道的粉丝力量。长期的电商积淀不仅实现了专业运营推广的搭建，也提升了WIS对消费者和市场的把控能力。如今，我们的品牌也再努力实现线上线下全渠道覆盖，对于万宁、天福、家乐福等渠道已经进驻，现如今我们已经开拓到上千家实体门店，并且也在热烈招商进行中，有意请联系我们。                            </div>
+                            <div class="ppzs1-s">
+                                <div class="zs2"><img src="../images/pro/code.png" alt=""></div>
+                                <div class="zs1">
+                                    <div>
+                                        招商热线：
+                                    </div>
+                                    <div>
+                                        400-9605-230
+                                    </div>
+                                    <div>020-31700160</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="maodian1">
+                    <img src="../images/pro/allproduct_one_17.png"  alt="">
+                </div>
+                <!-- <img src="../images/index/home_four.png" alt="" > -->
+            </div>
+            <div class="swiper-slide slide5">
+                <div class="slide3_content">
+                    <div class="biaoti1">·&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;美肤资讯&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;·</div>
+                    <span style="color: white;font-size: 20px;margin-top: 20px;">BEAUTY INFORMATION</span>
+                </div>
+                <div class="swiper-container swiper-container-son5">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide slide-son5">
+                        <div class="sl-5-1">
+                            <img src="../images/pro/IMG_2792-scaled.jpg" width="640px" alt="">
+                        </div>
+                        <div class="sl-5-2">
+                            <div class="sl-5-2-t1">WIS护肤知识 | 吃了酸辣油腻食物后怎么护理肌肤...</div>
+                            <div class="sl-5-2-t2"></div>
+                            <div class="sl-5-2-t3">互联网上有很多肌肤护理的方法知识文章视频等等，这些护理知识很多都提及做好肌肤护理工作不能吃酸辣油腻的食物，可是很多时候我们难以做到这一点，因为美食那么多，而且又好吃，我们怎么能够只是远观呢？</div>
+                            <div class="sl-5-2-t4">
+                                <div>2020-07-23</div>
+                                <div>
+                                    查看原文&gt;
+                                    </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide slide-son5">
+                        <div class="sl-5-1">
+                            <img src="../images/pro/无题会话00982-scaled.jpg" width="640px" alt="">
+                        </div>
+                        <div class="sl-5-2">
+                            <div class="sl-5-2-t1">WIS护肤知识 | 吃了酸辣油腻食物后怎么护理肌肤...</div>
+                            <div class="sl-5-2-t2"></div>
+                            <div class="sl-5-2-t3">互联网上有很多肌肤护理的方法知识文章视频等等，这些护理知识很多都提及做好肌肤护理工作不能吃酸辣油腻的食物，可是很多时候我们难以做到这一点，因为美食那么多，而且又好吃，我们怎么能够只是远观呢？</div>
+                            <div class="sl-5-2-t4">
+                                <div>2020-07-23</div>
+                                <div>
+                                    查看原文&gt;
+                                    </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide slide-son5">Slide 3</div>
+                    </div>
+                </div>
+                <div class="maodian1">
+                    <img src="../images/pro/allproduct_one_17.png"  alt="">
+                </div>
+        </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="fled-class">
+        <img src="../images/pro/allproduct_one_02.png" alt="">
+    </div>
+    <div class="fled-class-1">
+        <div class="f-c-son">
+            <div class="f-c-1-son">
+                <div>
+                    <img src="../images/pro/footerlogo.png" alt="">
+                </div>
+                <div class="table-foot1">
+                    <div>
+                        <table class="foot-tab-td" style="font-size: 16px;">
+                            <tr>
+                                <td>首页</td>
+                                <td>所有产品</td>
+                                <td>WIS资讯</td>
+                                <td>关于WIS</td>
+                                <td>防伪查询</td>
+                                <td>会员中心</td>
+                                <td>品牌招商</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>联系电话：020-3220-5671</p>
+                        <p>服务时间：周一至周五09:00至21:30</p>
+                    </div>
+                    <div>
+                        <table class="foot-tab-td">
+                            <tr>
+                                <td>网站地图</td>
+                                <td>联系我们</td>
+                                <td>粤ICP备12025057号-3</td>
+                                <td>版权所有 © 广州凡岛网络科技有限公司</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <table cellspacing="20px">
+                        <tr>
+                            <td><img src="../images/pro/qrcode1.png" alt=""></td>
+                            <td><img src="../images/pro/qrcode1.png" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td>WIS官方微信</td>
+                            <td>WIS官方微博</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="fled-class-out">
+                <img src="../images/pro/exit.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="../node_modules/swiper/dist/js/swiper.js"></script>
+    <script src="../node_modules/swiper/dist/js/swiper.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    var swiper1 = new Swiper('.swiper-container-son5', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 408,
+      navigation: {
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+        },
+        pagination: {
+            el: '.swiper-pagination-m',
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+            return '<span style="color:white;font-size:24px;position: absolute;top:0;left:48.5%" class="' + currentClass + '"></span>' +
+                    ' <span style="color:white；font-size:24px">/ </span>' +
+                    '<span style="color:white;font-size:24px;position: absolute;top:15px;right:48.5%" class="' + totalClass + '"></span>';
+            },
+        },
+    });
+    var mySwiper = new Swiper('.swiper-container-father', {
+        direction : 'vertical',
+        mousewheel: true,
+        autoplay:false,//等同于以下设置
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+    $('.maodian1').click(function(){
+        mySwiper.slideTo(0,1000,false)
+    })
+    var mySwiper1 = new Swiper('.swiper-container-son', {
+        loop: true,
+        // hideOnClick: true,
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    });
+    
+    
+
+    var swiper = new Swiper('.swiper-container-son2', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 80,
+      navigation: {
+            nextEl: '.swiper-button-next1',
+            prevEl: '.swiper-button-prev1',
+        },
+        pagination: {
+            el: '.swiper-pagination-l',
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+            return '<span style="color:white;font-size:24px;position: absolute;top:0;left:48.5%" class="' + currentClass + '"></span>' +
+                    ' <span style="color:white；font-size:24px">/ </span>' +
+                    '<span style="color:white;font-size:24px;position: absolute;top:15px;right:48.5%" class="' + totalClass + '"></span>';
+            },
+        },
+    });
+    </script>
+    <script>
+        
+        $(document).ready(function(){
+            var isshow = false;
+            $(".slide1").mouseover(function(){
+                $('.slide1 .swiper-button-prev').css({
+                    'opacity':'1'
+                })
+                $('.slide1 .swiper-button-next').css({
+                    'opacity':'1'
+                })
+                isshow = true
+                // console.log(isshow)
+            })
+            console.log(isshow)
+
+            
+            // var time = 0
+            // let mouseMoveTime = new Date().getTime()
+            // $(".slide1").mouseover(function(){
+            //     $('.slide1 .swiper-button-prev').css({
+            //         'opacity':'1'
+            //     })
+            //     $('.slide1 .swiper-button-next').css({
+            //         'opacity':'1'
+            //     })
+            //     time = 5000
+            //     mouseMoveTime = new Date().getTime()
+            //     console.log('函数中', mouseMoveTime)
+            // })
+            // console.log('函数外', mouseMoveTime)
+            // setInterval(() => {
+            //     let betweenTime = new Date().getTime()
+            //     // console.log('间隔', betweenTime - mouseMoveTime)
+            //     if (betweenTime - mouseMoveTime > 5000) { // 如果5s内鼠标没移动，则隐藏按钮
+            //         $('.slide1 .swiper-button-prev').css({
+            //             'opacity':'0'
+            //         })
+            //         $('.slide1 .swiper-button-next').css({
+            //             'opacity':'0'
+            //         })
+            //     } else {
+            //         $('.slide1 .swiper-button-prev').css({
+            //             'opacity':'1'
+            //         })
+            //         $('.slide1 .swiper-button-next').css({
+            //             'opacity':'1'
+            //         })
+            //     }
+            // }, 1000);
+
+            // console.log(time)
+            // setTimeout(()=>{
+            //     $('.slide1 .swiper-button-prev').css({
+            //         'opacity':'0'
+            //     })
+            //     $('.slide1 .swiper-button-next').css({
+            //         'opacity':'0'
+            //     })
+            // },time)
+            $("#allp,.allcp").mouseover(function(){
+                $('.allcp').css({
+                    'display':'block'
+                })
+            })
+            $("#allp,.allcp").mouseout(function(){
+                $('.allcp').css({
+                    'display':'none'
+                })
+            })
+            $('.fled-class').click(function(){
+                $('.fled-class-1').css({
+                    'display':'block'
+                })
+            })
+            $('.fled-class-out').click(function(){
+                $('.fled-class-1').css({
+                    'display':'none'
+                })
+            })
+        })
+    </script>
+</html>
